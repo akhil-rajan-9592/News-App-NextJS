@@ -1,8 +1,10 @@
 import styles from '../../styles/Feed.module.css' 
 import { useRouter } from 'next/router'
 import  Toolbar  from '../../components/toolbar'
+import Image from 'next/image'
 
 function Feed( {pageNumber, articles} ){
+  console.log(articles);
   const router = useRouter();
 
   return(
@@ -14,7 +16,7 @@ function Feed( {pageNumber, articles} ){
             <div key={index} className={styles.post}>
               <h1 onClick={ () => (window.location.href = article.url) } > { article.title } </h1>
               <p>{article.description}</p>
-              { !!article.urlToImage && <img src={article.urlToImage} alt={ article.title } /> }
+              { !!article.urlToImage && <Image width={500} height={300} src={article.urlToImage} alt={ article.title } /> }
             </div>
           ))
         }

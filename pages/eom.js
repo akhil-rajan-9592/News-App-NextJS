@@ -1,5 +1,7 @@
 import styles from '../styles/EOM.module.css'
 import  Toolbar  from '../components/toolbar'
+import Image from 'next/image'
+
 function Eom({employee}){
   return(
     <div className='page-container'>
@@ -9,7 +11,7 @@ function Eom({employee}){
         <div className={styles.employeeOfTheMonth}>
           <h3>{employee.name}</h3>
           <h6> {employee.position} </h6>
-          <img src={employee.image} alt="" />
+          <Image width="250" height="250" src={employee.image} alt="" />
           <p> {employee.description} </p>
         </div>
       </div>
